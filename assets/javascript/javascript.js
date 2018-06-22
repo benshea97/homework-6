@@ -16,7 +16,7 @@ $( document ).ready(function() {
     function addNewButton(){
         $("#addGif").on("click", function(){
         var action = $("#action-input").val().trim();
-    
+        
         if (action == ""){
           return false; 
         }
@@ -47,7 +47,7 @@ $( document ).ready(function() {
             $("#gifsView").empty(); 
             var results = response.data; 
             if (results == ""){
-    
+
               alert("There isn't a gif for this selected button");
     
             }
@@ -62,13 +62,13 @@ $( document ).ready(function() {
         
                 var gifImage = $("<img>");
     
-                gifImage.attr("src", results[i].images.fixed_height_small_still.url); // still image stored into src of image
+                gifImage.attr("src", results[i].images.fixed_height_small_still.url); 
     
-                gifImage.attr("data-still",results[i].images.fixed_height_small_still.url); // still image
+                gifImage.attr("data-still",results[i].images.fixed_height_small_still.url); 
     
-                gifImage.attr("data-animate",results[i].images.fixed_height_small.url); // animated image
+                gifImage.attr("data-animate",results[i].images.fixed_height_small.url); 
     
-                gifImage.attr("data-state", "still"); // set the image state
+                gifImage.attr("data-state", "still"); 
     
                 gifImage.addClass("image");
     
